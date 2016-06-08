@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.jst.ws.client.type.java">
+		<item value="/Annuaire3/WebContent/wsdl/Annuaire.wsdl"/>
+		<item value="/Annuaire3/WebContent/WEB-INF/wsdl/Annuaire.wsdl"/>
+		<item value="/exercice2/WebContent/wsdl/Calculette.wsdl"/>
+	</list>
+</section>

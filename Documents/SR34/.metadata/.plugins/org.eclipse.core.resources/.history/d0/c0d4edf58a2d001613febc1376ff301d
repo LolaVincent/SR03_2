@@ -1,0 +1,342 @@
+<%@page contentType="text/html;charset=UTF-8"%>
+<% request.setCharacterEncoding("UTF-8"); %>
+<HTML>
+<HEAD>
+<TITLE>Result</TITLE>
+</HEAD>
+<BODY>
+<H1>Result</H1>
+
+<jsp:useBean id="sampleAnnuaireProxyid" scope="session" class="DefaultNamespace.AnnuaireProxy" />
+<%
+if (request.getParameter("endpoint") != null && request.getParameter("endpoint").length() > 0)
+sampleAnnuaireProxyid.setEndpoint(request.getParameter("endpoint"));
+%>
+
+<%
+String method = request.getParameter("method");
+int methodID = 0;
+if (method == null) methodID = -1;
+
+if(methodID != -1) methodID = Integer.parseInt(method);
+boolean gotMethod = false;
+
+try {
+switch (methodID){ 
+case 2:
+        gotMethod = true;
+        java.lang.String getEndpoint2mtemp = sampleAnnuaireProxyid.getEndpoint();
+if(getEndpoint2mtemp == null){
+%>
+<%=getEndpoint2mtemp %>
+<%
+}else{
+        String tempResultreturnp3 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getEndpoint2mtemp));
+        %>
+        <%= tempResultreturnp3 %>
+        <%
+}
+break;
+case 5:
+        gotMethod = true;
+        String endpoint_0id=  request.getParameter("endpoint8");
+            java.lang.String endpoint_0idTemp = null;
+        if(!endpoint_0id.equals("")){
+         endpoint_0idTemp  = endpoint_0id;
+        }
+        sampleAnnuaireProxyid.setEndpoint(endpoint_0idTemp);
+break;
+case 10:
+        gotMethod = true;
+        DefaultNamespace.Annuaire getAnnuaire10mtemp = sampleAnnuaireProxyid.getAnnuaire();
+if(getAnnuaire10mtemp == null){
+%>
+<%=getAnnuaire10mtemp %>
+<%
+}else{
+        if(getAnnuaire10mtemp!= null){
+        String tempreturnp11 = getAnnuaire10mtemp.toString();
+        %>
+        <%=tempreturnp11%>
+        <%
+        }}
+break;
+case 13:
+        gotMethod = true;
+        String sujet_1id=  request.getParameter("sujet16");
+            java.lang.String sujet_1idTemp = null;
+        if(!sujet_1id.equals("")){
+         sujet_1idTemp  = sujet_1id;
+        }
+        String categorie_id_2id=  request.getParameter("categorie_id18");
+        int categorie_id_2idTemp  = Integer.parseInt(categorie_id_2id);
+        sampleAnnuaireProxyid.modificationCategorie(sujet_1idTemp,categorie_id_2idTemp);
+break;
+case 20:
+        gotMethod = true;
+        String categorie_id_3id=  request.getParameter("categorie_id23");
+        int categorie_id_3idTemp  = Integer.parseInt(categorie_id_3id);
+        String nom_4id=  request.getParameter("nom25");
+            java.lang.String nom_4idTemp = null;
+        if(!nom_4id.equals("")){
+         nom_4idTemp  = nom_4id;
+        }
+        String adresse_5id=  request.getParameter("adresse27");
+            java.lang.String adresse_5idTemp = null;
+        if(!adresse_5id.equals("")){
+         adresse_5idTemp  = adresse_5id;
+        }
+        String numero_6id=  request.getParameter("numero29");
+            java.lang.String numero_6idTemp = null;
+        if(!numero_6id.equals("")){
+         numero_6idTemp  = numero_6id;
+        }
+        String annonce_id_7id=  request.getParameter("annonce_id31");
+        int annonce_id_7idTemp  = Integer.parseInt(annonce_id_7id);
+        sampleAnnuaireProxyid.modificationAnnonce(categorie_id_3idTemp,nom_4idTemp,adresse_5idTemp,numero_6idTemp,annonce_id_7idTemp);
+break;
+case 33:
+        gotMethod = true;
+        String categorie_id_8id=  request.getParameter("categorie_id36");
+        int categorie_id_8idTemp  = Integer.parseInt(categorie_id_8id);
+        String nom_9id=  request.getParameter("nom38");
+            java.lang.String nom_9idTemp = null;
+        if(!nom_9id.equals("")){
+         nom_9idTemp  = nom_9id;
+        }
+        String adresse_10id=  request.getParameter("adresse40");
+            java.lang.String adresse_10idTemp = null;
+        if(!adresse_10id.equals("")){
+         adresse_10idTemp  = adresse_10id;
+        }
+        String numero_11id=  request.getParameter("numero42");
+            java.lang.String numero_11idTemp = null;
+        if(!numero_11id.equals("")){
+         numero_11idTemp  = numero_11id;
+        }
+        sampleAnnuaireProxyid.creationAnnonce(categorie_id_8idTemp,nom_9idTemp,adresse_10idTemp,numero_11idTemp);
+break;
+case 44:
+        gotMethod = true;
+        String categorie_12id=  request.getParameter("categorie47");
+            java.lang.String categorie_12idTemp = null;
+        if(!categorie_12id.equals("")){
+         categorie_12idTemp  = categorie_12id;
+        }
+        sampleAnnuaireProxyid.creationCategorie(categorie_12idTemp);
+break;
+case 49:
+        gotMethod = true;
+        String adresse_13id=  request.getParameter("adresse52");
+            java.lang.String adresse_13idTemp = null;
+        if(!adresse_13id.equals("")){
+         adresse_13idTemp  = adresse_13id;
+        }
+        beans.Annonce[] affichageAnnonceAdresse49mtemp = sampleAnnuaireProxyid.affichageAnnonceAdresse(adresse_13idTemp);
+if(affichageAnnonceAdresse49mtemp == null){
+%>
+<%=affichageAnnonceAdresse49mtemp %>
+<%
+}else{
+        String tempreturnp50 = null;
+        if(affichageAnnonceAdresse49mtemp != null){
+        java.util.List listreturnp50= java.util.Arrays.asList(affichageAnnonceAdresse49mtemp);
+        tempreturnp50 = listreturnp50.toString();
+        }
+        %>
+        <%=tempreturnp50%>
+        <%
+}
+break;
+case 54:
+        gotMethod = true;
+        beans.Annonce[] affichageAnnonce54mtemp = sampleAnnuaireProxyid.affichageAnnonce();
+if(affichageAnnonce54mtemp == null){
+%>
+<%=affichageAnnonce54mtemp %>
+<%
+}else{
+        String tempreturnp55 = null;
+        if(affichageAnnonce54mtemp != null){
+        java.util.List listreturnp55= java.util.Arrays.asList(affichageAnnonce54mtemp);
+        tempreturnp55 = listreturnp55.toString();
+        }
+        %>
+        <%=tempreturnp55%>
+        <%
+}
+break;
+case 57:
+        gotMethod = true;
+        String nom_14id=  request.getParameter("nom74");
+            java.lang.String nom_14idTemp = null;
+        if(!nom_14id.equals("")){
+         nom_14idTemp  = nom_14id;
+        }
+        beans.Annonce affichageAnnonceNom57mtemp = sampleAnnuaireProxyid.affichageAnnonceNom(nom_14idTemp);
+if(affichageAnnonceNom57mtemp == null){
+%>
+<%=affichageAnnonceNom57mtemp %>
+<%
+}else{
+%>
+<TABLE>
+<TR>
+<TD COLSPAN="3" ALIGN="LEFT">returnp:</TD>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">numero:</TD>
+<TD>
+<%
+if(affichageAnnonceNom57mtemp != null){
+java.lang.String typenumero60 = affichageAnnonceNom57mtemp.getNumero();
+        String tempResultnumero60 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typenumero60));
+        %>
+        <%= tempResultnumero60 %>
+        <%
+}%>
+</TD>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">nom:</TD>
+<TD>
+<%
+if(affichageAnnonceNom57mtemp != null){
+java.lang.String typenom62 = affichageAnnonceNom57mtemp.getNom();
+        String tempResultnom62 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typenom62));
+        %>
+        <%= tempResultnom62 %>
+        <%
+}%>
+</TD>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">adresse:</TD>
+<TD>
+<%
+if(affichageAnnonceNom57mtemp != null){
+java.lang.String typeadresse64 = affichageAnnonceNom57mtemp.getAdresse();
+        String tempResultadresse64 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeadresse64));
+        %>
+        <%= tempResultadresse64 %>
+        <%
+}%>
+</TD>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">categorie:</TD>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="1" ALIGN="LEFT">sujet:</TD>
+<TD>
+<%
+if(affichageAnnonceNom57mtemp != null){
+beans.Categorie tebece0=affichageAnnonceNom57mtemp.getCategorie();
+if(tebece0 != null){
+java.lang.String typesujet68 = tebece0.getSujet();
+        String tempResultsujet68 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typesujet68));
+        %>
+        <%= tempResultsujet68 %>
+        <%
+}}%>
+</TD>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="1" ALIGN="LEFT">id:</TD>
+<TD>
+<%
+if(affichageAnnonceNom57mtemp != null){
+beans.Categorie tebece0=affichageAnnonceNom57mtemp.getCategorie();
+if(tebece0 != null){
+java.lang.Long typeid70 = tebece0.getId();
+        String tempResultid70 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeid70));
+        %>
+        <%= tempResultid70 %>
+        <%
+}}%>
+</TD>
+<TR>
+<TD WIDTH="5%"></TD>
+<TD COLSPAN="2" ALIGN="LEFT">id:</TD>
+<TD>
+<%
+if(affichageAnnonceNom57mtemp != null){
+java.lang.Long typeid72 = affichageAnnonceNom57mtemp.getId();
+        String tempResultid72 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typeid72));
+        %>
+        <%= tempResultid72 %>
+        <%
+}%>
+</TD>
+</TABLE>
+<%
+}
+break;
+case 76:
+        gotMethod = true;
+        String categorie_id_15id=  request.getParameter("categorie_id79");
+        int categorie_id_15idTemp  = Integer.parseInt(categorie_id_15id);
+        sampleAnnuaireProxyid.suppressionCategorie(categorie_id_15idTemp);
+break;
+case 81:
+        gotMethod = true;
+        String annonce_id_16id=  request.getParameter("annonce_id84");
+        int annonce_id_16idTemp  = Integer.parseInt(annonce_id_16id);
+        sampleAnnuaireProxyid.suppressionAnnonce(annonce_id_16idTemp);
+break;
+case 86:
+        gotMethod = true;
+        String categorie_id_17id=  request.getParameter("categorie_id89");
+        int categorie_id_17idTemp  = Integer.parseInt(categorie_id_17id);
+        beans.Annonce[] affichageAnnonceCategorie86mtemp = sampleAnnuaireProxyid.affichageAnnonceCategorie(categorie_id_17idTemp);
+if(affichageAnnonceCategorie86mtemp == null){
+%>
+<%=affichageAnnonceCategorie86mtemp %>
+<%
+}else{
+        String tempreturnp87 = null;
+        if(affichageAnnonceCategorie86mtemp != null){
+        java.util.List listreturnp87= java.util.Arrays.asList(affichageAnnonceCategorie86mtemp);
+        tempreturnp87 = listreturnp87.toString();
+        }
+        %>
+        <%=tempreturnp87%>
+        <%
+}
+break;
+case 91:
+        gotMethod = true;
+        beans.Categorie[] affichageCategorie91mtemp = sampleAnnuaireProxyid.affichageCategorie();
+if(affichageCategorie91mtemp == null){
+%>
+<%=affichageCategorie91mtemp %>
+<%
+}else{
+        String tempreturnp92 = null;
+        if(affichageCategorie91mtemp != null){
+        java.util.List listreturnp92= java.util.Arrays.asList(affichageCategorie91mtemp);
+        tempreturnp92 = listreturnp92.toString();
+        }
+        %>
+        <%=tempreturnp92%>
+        <%
+}
+break;
+}
+} catch (Exception e) { 
+%>
+Exception: <%= org.eclipse.jst.ws.util.JspUtils.markup(e.toString()) %>
+Message: <%= org.eclipse.jst.ws.util.JspUtils.markup(e.getMessage()) %>
+<%
+return;
+}
+if(!gotMethod){
+%>
+result: N/A
+<%
+}
+%>
+</BODY>
+</HTML>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="executeQuery" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="executeQuery"/>
+			<item value="id_questionnaire"/>
+			<item value="questionnaire_id"/>
+			<item value="&apos;0&apos;"/>
+			<item value="&apos;1&apos;"/>
+			<item value="false"/>
+			<item value="true"/>
+			<item value="ReponseDaoImpl"/>
+		</list>
+		<list key="replacehistory">
+			<item value="&quot;0&quot;"/>
+			<item value="&quot;1&quot;"/>
+			<item value="&apos;0&apos;"/>
+			<item value="&apos;1&apos;"/>
+			<item value="PossibiliteDaoImpl"/>
+			<item value="&amp;nbsp;"/>
+			<item value="SR03"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="301" key="DIALOG_WIDTH"/>
+		<item value="1|Droid Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="384" key="DIALOG_HEIGHT"/>
+		<item value="813" key="DIALOG_X_ORIGIN"/>
+		<item value="274" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

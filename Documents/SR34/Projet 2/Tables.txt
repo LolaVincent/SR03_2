@@ -1,0 +1,70 @@
+CREATE TABLE Utilisateur(
+id INT NOT NULL AUTO_INCREMENT,
+mail varchar(50) NOT NULL,
+mdp varchar(6) NOT NULL,
+nom varchar(25) NOT NULL,
+telephone varchar(15) NOT NULL,
+societe varchar(25),
+type varchar(25) NOT NULL,
+statut char(1),
+date timestamp,
+PRIMARY KEY (id)
+);
+
+insert into Utilisateur (mail, mdp, nom, telephone, societe, type, statut, date) values ('lvincent@etu.utc.fr', 'azer', 'Lola', '0453698788', 'utc', 'admin', 'A', now());
+
+            	
+
+CREATE TABLE Questionnaire (
+id INT NOT NULL AUTO_INCREMENT,
+sujet varchar(25) NOT NULL,
+statut char(1) NOT NULL,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE Parcours(
+id INT NOT NULL AUTO_INCREMENT,
+utilisateur_id INT NOT NULL,
+questionnaire_id INT NOT NULL,
+FOREIGN KEY (utilisateur_id) REFERENCES Utilisateur(id) ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY (questionnaire_id) REFERENCES Questionnaire(id) ON DELETE CASCADE ON UPDATE CASCADE,
+scoreTotal INT NOT NULL, 
+duree INT,
+PRIMARY KEY (id)
+);
+
+
+CREATE TABLE Question(
+id INT NOT NULL AUTO_INCREMENT,
+questionnaire_id INT NOT NULL,
+question varchar(255) NOT NULL,
+statut varchar(1) NOT NULL,
+FOREIGN KEY (questionnaire_id) REFERENCES Questionnaire(id) ON DELETE CASCADE ON UPDATE CASCADE,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE Possibilite(
+id INT NOT NULL AUTO_INCREMENT,
+question_id int NOT NULL,
+possibilite varchar(255) NOT NULL,
+bonneReponse varchar(1) NOT NULL,
+statut varchar(1) NOT NULL,
+FOREIGN KEY (question_id) REFERENCES Question(id) ON DELETE CASCADE ON UPDATE CASCADE,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE Reponse(
+id INT NOT NULL AUTO_INCREMENT,
+possibilite_id INT NOT NULL,
+question_id INT NOT NULL,
+score INT NOT NULL,
+FOREIGN KEY (possibilite_id) REFERENCES Possibilite(id) ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY (question_id) REFERENCES Question(id) ON DELETE CASCADE ON UPDATE CASCADE,
+PRIMARY KEY(id)
+);
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+package webservice;
+
+public class Main {
+	public static void main(String [] args){
+	CalculetteProxy calculetteproxy = new CalculetteProxy();
+	int somme;
+	int mul;
+	int sous;
+	try {
+		somme = calculetteproxy.add(6, 9);
+		mul = calculetteproxy.mul(6, 9);
+		sous = calculetteproxy.sou(6, 9);
+	}
+	catch (Exception e) {} 
+	System.out.print(somme);
+	System.out.print(mul);
+	System.out.print(sous);
+	}
+}

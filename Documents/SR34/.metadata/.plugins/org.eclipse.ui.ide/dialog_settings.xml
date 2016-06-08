@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/lola/Documents/SR34/Annuaire"/>
+			<item value="/home/lola/Documents/SR34/Projet 2"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item value="525" key="DIALOG_WIDTH"/>
+		<item value="1|Droid Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="586" key="DIALOG_HEIGHT"/>
+		<item value="701" key="DIALOG_X_ORIGIN"/>
+		<item value="140" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

@@ -1,0 +1,167 @@
+	  <servlet-mapping>
+    <servlet-name>ModificationQuestionnaire</servlet-name>
+    <url-pattern>/ModificationQuestionnaire</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ModificationQuestionnaire</servlet-name>
+    <servlet-class>ModificationQuestionnaire</servlet-class>
+  </servlet>
+	
+		String question2 = request.getParameter("Question2"); 
+		String question3 = request.getParameter("Question3"); 
+		String question4 = request.getParameter("Question4");
+
+		String reponse21 = request.getParameter("Reponse21");
+		String reponse22 = request.getParameter("Reponse22");
+		String reponse23 = request.getParameter("Reponse23");
+		String reponse24 = request.getParameter("Reponse24");
+		String reponse31 = request.getParameter("Reponse31");
+		String reponse32 = request.getParameter("Reponse32");
+		String reponse33 = request.getParameter("Reponse33");
+		String reponse34 = request.getParameter("Reponse34");
+		String reponse41 = request.getParameter("Reponse41");
+		String reponse42 = request.getParameter("Reponse42");
+		String reponse43 = request.getParameter("Reponse43");
+		String reponse44 = request.getParameter("Reponse44");
+
+String bonneReponse2 = request.getParameter("bonneReponse2");
+		String bonneReponse3 = request.getParameter("bonneReponse3");
+		String bonneReponse4 = request.getParameter("bonneReponse4");	   
+
+
+
+	    Possibilite possibilite1b = new Possibilite();
+	    possibilite1b.setPossibilite(reponse12);
+	    possibilite1b.setQuestion(questionFK1);
+	    if (bonneReponse1.equals("reponse12")) {
+	    	possibilite1b.setBonneReponse("1");
+	    } else {possibilite1b.setBonneReponse("0");}
+	    DaoPossibilite.creer(possibilite1b);
+	    
+	    Possibilite possibilite1c = new Possibilite();
+	    possibilite1c.setPossibilite(reponse13);
+	    possibilite1c.setQuestion(questionFK1);
+	    if (bonneReponse1.equals("reponse13")) {
+	    	possibilite1c.setBonneReponse("1");
+	    } else {possibilite1c.setBonneReponse("0");}
+	    DaoPossibilite.creer(possibilite1c);
+	    
+	    Possibilite possibilite1d = new Possibilite();
+	    possibilite1d.setPossibilite(reponse14);
+	    possibilite1d.setQuestion(questionFK1);
+	    if (bonneReponse1.equals("reponse14")) {
+	    	possibilite1d.setBonneReponse("1");
+	    } else {possibilite1d.setBonneReponse("0");}
+	    DaoPossibilite.creer(possibilite1d);
+
+	    Question deuxiemeQuestion= new Question();
+	    deuxiemeQuestion.setQuestion(question2);
+	    deuxiemeQuestion.setQuestionnaire(questionnaireFK);
+	    DaoQuestion.creer(deuxiemeQuestion); 
+	    
+	    Question questionFK2 = DaoQuestion.trouverQuestion(question2);
+
+	    
+	    Possibilite possibilite2a = new Possibilite();
+	    possibilite2a.setPossibilite(reponse21);
+	    possibilite2a.setQuestion(questionFK2);
+	    if (bonneReponse2.equals("Reponse21")) {
+	    	possibilite2a.setBonneReponse("1");
+	    } else {possibilite2a.setBonneReponse("0");}
+	    
+	    Possibilite possibilite2b = new Possibilite();
+	    possibilite2b.setPossibilite(reponse22);
+	    possibilite2b.setQuestion(questionFK2);
+	    if (bonneReponse2.equals("Reponse22")) {
+	    	possibilite2b.setBonneReponse("1");
+	    } else {possibilite2b.setBonneReponse("0");}
+	    
+	    Possibilite possibilite2c = new Possibilite();
+	    possibilite2c.setPossibilite(reponse23);
+	    possibilite2c.setQuestion(questionFK2);
+	    if (bonneReponse2.equals("Reponse23")) {
+	    	possibilite2c.setBonneReponse("1");
+	    } else {possibilite2c.setBonneReponse("0");}
+	    
+	    Possibilite possibilite2d = new Possibilite();
+	    possibilite2d.setPossibilite(reponse24);
+	    possibilite2d.setQuestion(questionFK2);
+	    if (bonneReponse2.equals("Reponse24")) {
+	    	possibilite2d.setBonneReponse("1");
+	    } else {possibilite2d.setBonneReponse("0");}
+	    
+	    
+	    Question troisiemeQuestion= new Question();
+	    troisiemeQuestion.setQuestion(question3);
+	    troisiemeQuestion.setQuestionnaire(questionnaireFK);
+	    DaoQuestion.creer(troisiemeQuestion); 
+	    
+	    Question questionFK3 = DaoQuestion.trouverQuestion(question3);
+	    
+	    
+	    Possibilite possibilite3a = new Possibilite();
+	    possibilite3a.setPossibilite(reponse31);
+	    possibilite3a.setQuestion(questionFK3);
+	    if (bonneReponse3.equals("Reponse31")) {
+	    	possibilite3a.setBonneReponse("1");
+	    } else {possibilite3a.setBonneReponse("0");}
+	    
+	    Possibilite possibilite3b = new Possibilite();
+	    possibilite3b.setPossibilite(reponse32);
+	    possibilite3b.setQuestion(questionFK3);
+	    if (bonneReponse3.equals("Reponse32")) {
+	    	possibilite3b.setBonneReponse("1");
+	    } else {possibilite3b.setBonneReponse("0");}
+	    
+	    Possibilite possibilite3c = new Possibilite();
+	    possibilite3c.setPossibilite(reponse33);
+	    possibilite3c.setQuestion(questionFK3);
+	    if (bonneReponse3.equals("Reponse33")) {
+	    	possibilite3c.setBonneReponse("1");
+	    } else {possibilite3c.setBonneReponse("0");}
+	    
+	    Possibilite possibilite3d = new Possibilite();
+	    possibilite3d.setPossibilite(reponse34);
+	    possibilite3d.setQuestion(questionFK3);
+	    if (bonneReponse3.equals("Reponse34")) {
+	    	possibilite3d.setBonneReponse("1");
+	    } else {possibilite3d.setBonneReponse("0");}
+	    
+	    
+	    Question quatriemeQuestion= new Question();
+	    quatriemeQuestion.setQuestion(question4);
+	    quatriemeQuestion.setQuestionnaire(questionnaireFK);
+	    DaoQuestion.creer(quatriemeQuestion); 
+
+	    Question questionFK4 = DaoQuestion.trouverQuestion(question4);
+	    
+	    
+	    Possibilite possibilite4a = new Possibilite();
+	    possibilite4a.setPossibilite(reponse41);
+	    possibilite4a.setQuestion(questionFK4);
+	    if (bonneReponse4.equals("Reponse41")) {
+	    	possibilite4a.setBonneReponse("1");
+	    } else {possibilite4a.setBonneReponse("0");}
+	    
+	    Possibilite possibilite4b = new Possibilite();
+	    possibilite4b.setPossibilite(reponse42);
+	    possibilite4b.setQuestion(questionFK4);
+	    if (bonneReponse4.equals("Reponse42")) {
+	    	possibilite4b.setBonneReponse("1");
+	    } else {possibilite4b.setBonneReponse("0");}
+	    
+	    Possibilite possibilite4c = new Possibilite();
+	    possibilite4c.setPossibilite(reponse43);
+	    possibilite4c.setQuestion(questionFK4);
+	    if (bonneReponse4.equals("Reponse43")) {
+	    	possibilite4c.setBonneReponse("1");
+	    } else {possibilite4c.setBonneReponse("0");}
+	    
+	    Possibilite possibilite4d = new Possibilite();
+	    possibilite4d.setPossibilite(reponse44);
+	    possibilite4d.setQuestion(questionFK4);
+	    if (bonneReponse4.equals("Reponse44")) {
+	    	possibilite4d.setBonneReponse("1");
+	    } else {possibilite4d.setBonneReponse("0");}
+

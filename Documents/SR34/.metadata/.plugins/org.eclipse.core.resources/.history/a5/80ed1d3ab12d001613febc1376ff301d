@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//src/DefaultNamespace/Annuaire.java=UTF-8
+encoding//src/DefaultNamespace/AnnuaireService.java=UTF-8
+encoding//src/DefaultNamespace/AnnuaireServiceLocator.java=UTF-8
+encoding//src/DefaultNamespace/AnnuaireSoapBindingStub.java=UTF-8
+encoding//src/beans/Annonce.java=UTF-8
+encoding//src/beans/Categorie.java=UTF-8

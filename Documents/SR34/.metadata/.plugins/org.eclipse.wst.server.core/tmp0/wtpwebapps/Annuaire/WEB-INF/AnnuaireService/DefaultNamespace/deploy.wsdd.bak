@@ -1,0 +1,84 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from AnnuaireService WSDL service -->
+
+  <service name="Annuaire" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://DefaultNamespace"/>
+      <parameter name="wsdlServiceElement" value="AnnuaireService"/>
+      <parameter name="schemaQualified" value="http://beans,http://DefaultNamespace"/>
+      <parameter name="wsdlServicePort" value="Annuaire"/>
+      <parameter name="className" value="DefaultNamespace.AnnuaireSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Annuaire"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="affichageCategorieNom" qname="operNS:affichageCategorieNom" xmlns:operNS="http://DefaultNamespace" returnQName="retNS:affichageCategorieNomReturn" xmlns:retNS="http://DefaultNamespace" returnType="rtns:Categorie" xmlns:rtns="http://beans" soapAction="" >
+        <parameter qname="pns:sujet" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="suppressionAnnonce" qname="operNS:suppressionAnnonce" xmlns:operNS="http://DefaultNamespace" soapAction="" >
+        <parameter qname="pns:annonce_id" xmlns:pns="http://DefaultNamespace" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="affichageAnnonceCategorie" qname="operNS:affichageAnnonceCategorie" xmlns:operNS="http://DefaultNamespace" returnQName="retNS:affichageAnnonceCategorieReturn" xmlns:retNS="http://DefaultNamespace" returnType="rtns:Annonce" xmlns:rtns="http://beans" soapAction="" >
+        <parameter qname="pns:sujet" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="affichageAnnonceAdresse" qname="operNS:affichageAnnonceAdresse" xmlns:operNS="http://DefaultNamespace" returnQName="retNS:affichageAnnonceAdresseReturn" xmlns:retNS="http://DefaultNamespace" returnType="rtns:Annonce" xmlns:rtns="http://beans" soapAction="" >
+        <parameter qname="pns:adresse" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="affichageAnnonce" qname="operNS:affichageAnnonce" xmlns:operNS="http://DefaultNamespace" returnQName="retNS:affichageAnnonceReturn" xmlns:retNS="http://DefaultNamespace" returnType="rtns:Annonce" xmlns:rtns="http://beans" soapAction="" >
+      </operation>
+      <operation name="affichageAnnonceNom" qname="operNS:affichageAnnonceNom" xmlns:operNS="http://DefaultNamespace" returnQName="retNS:affichageAnnonceNomReturn" xmlns:retNS="http://DefaultNamespace" returnType="rtns:Annonce" xmlns:rtns="http://beans" soapAction="" >
+        <parameter qname="pns:nom" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="affichageCategorie" qname="operNS:affichageCategorie" xmlns:operNS="http://DefaultNamespace" returnQName="retNS:affichageCategorieReturn" xmlns:retNS="http://DefaultNamespace" returnType="rtns:Categorie" xmlns:rtns="http://beans" soapAction="" >
+      </operation>
+      <operation name="creationAnnonce" qname="operNS:creationAnnonce" xmlns:operNS="http://DefaultNamespace" soapAction="" >
+        <parameter qname="pns:sujet" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:nom" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:adresse" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:numero" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="creationCategorie" qname="operNS:creationCategorie" xmlns:operNS="http://DefaultNamespace" soapAction="" >
+        <parameter qname="pns:categorie" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="modificationCategorie" qname="operNS:modificationCategorie" xmlns:operNS="http://DefaultNamespace" soapAction="" >
+        <parameter qname="pns:sujet" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:categorie_id" xmlns:pns="http://DefaultNamespace" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="modificationAnnonce" qname="operNS:modificationAnnonce" xmlns:operNS="http://DefaultNamespace" soapAction="" >
+        <parameter qname="pns:categorie_id" xmlns:pns="http://DefaultNamespace" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:nom" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:adresse" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:numero" xmlns:pns="http://DefaultNamespace" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:annonce_id" xmlns:pns="http://DefaultNamespace" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="suppressionCategorie" qname="operNS:suppressionCategorie" xmlns:operNS="http://DefaultNamespace" soapAction="" >
+        <parameter qname="pns:categorie_id" xmlns:pns="http://DefaultNamespace" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="affichageCategorie affichageCategorieNom suppressionCategorie creationCategorie modificationAnnonce affichageAnnonceNom affichageAnnonce creationAnnonce modificationCategorie affichageAnnonceAdresse suppressionAnnonce affichageAnnonceCategorie"/>
+
+      <typeMapping
+        xmlns:ns="http://beans"
+        qname="ns:Annonce"
+        type="java:beans.Annonce"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://beans"
+        qname="ns:Categorie"
+        type="java:beans.Categorie"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

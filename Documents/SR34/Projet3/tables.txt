@@ -1,0 +1,20 @@
+CREATE TABLE Categorie (
+id INT NOT NULL AUTO_INCREMENT,
+sujet varchar(25) NOT NULL,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE Annonce(
+id INT NOT NULL AUTO_INCREMENT,
+categorie_id INT NOT NULL,
+nom varchar(255),
+adresse varchar(255),
+num varchar(10),
+FOREIGN KEY (categorie_id) REFERENCES Categorie(id) ON DELETE CASCADE ON UPDATE CASCADE,
+PRIMARY KEY (id)
+);
+
+
+
+
+

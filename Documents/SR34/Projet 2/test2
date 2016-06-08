@@ -1,0 +1,46 @@
+	    int i = 0;
+	    for (Iterator<Utilisateur> it = list.iterator(); it.hasNext();) {
+	    	i = i +1;
+	    	Utilisateur user = it.next();
+	    	request.setAttribute("mail"+Integer.toString(i), user.getAdresse());
+	    	request.setAttribute("nom"+Integer.toString(i), user.getNom());
+	    	request.setAttribute("societe"+Integer.toString(i), user.getSociete());
+	    	request.setAttribute("telephone"+Integer.toString(i), user.getTelephone());
+	    	request.setAttribute("type"+Integer.toString(i), user.getType());
+	    	request.setAttribute("statut"+Integer.toString(i), user.getStatut());
+	    }
+	    request.setAttribute("nb", i);
+
+
+<tr><td><%    
+    		out.print("test2");
+            String mail = (String) request.getAttribute("mail"+Integer.toString(i));
+            out.println( mail );
+            %>
+    </td>
+    <td><%
+            String nom = (String) request.getAttribute("nom"+Integer.toString(i));
+            out.println( nom );
+            %>
+    </td>
+    <td><%
+            String societe = (String) request.getAttribute("societe"+Integer.toString(i));
+            out.println( societe );
+            %>
+    </td>
+    <td><%
+            String telephone = (String) request.getAttribute("telephone"+Integer.toString(i));
+            out.println( telephone );
+            %>
+    </td>
+    <td><%
+            String type = (String) request.getAttribute("type"+Integer.toString(i));
+            out.println( type );
+         %>
+    </td>
+    <td><%
+            String statut = (String) request.getAttribute("statut"+Integer.toString(i));
+            out.println(statut );
+        %>
+    </td>
+    </tr>

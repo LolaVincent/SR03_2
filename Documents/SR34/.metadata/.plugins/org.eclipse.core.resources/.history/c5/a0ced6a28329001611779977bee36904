@@ -1,0 +1,10 @@
+package webservice;
+
+public class Main {
+	CalculetteProxy calculetteproxy = new CalculetteProxy();
+	int somme = calculetteproxy.add(8,9);
+	
+	
+	
+	
+}

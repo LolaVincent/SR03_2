@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        	<link rel="stylesheet" type="text/css" href="tab.css">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title> Emploi du temps </title>
+		<link rel="stylesheet" href="bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	</head>
+	<body class="body">
+		<script type="text/javascript">
+			function testSaisie(){
+				if (document.forms["formulaire"].elements["loginInput1"].value.length == 0 && document.forms["formulaire"].elements["loginInput2"].value.length == 0){
+					document.getElementById("loginInput1").style.borderColor = "red";
+				    document.getElementById("loginInput1").style.borderStyle = "solid";
+				    document.getElementById("loginInput1").style.borderWidth = "2px";
+				    document.getElementById("loginInput2").style.borderColor = "red";
+				    document.getElementById("loginInput2").style.borderStyle = "solid";
+				    document.getElementById("loginInput2").style.borderWidth = "2px";
+				    alert("Veuillez entrer au moins un login.");
+					return false;
+					}
+				return true;	
+			}
+		</script>
+<?php 
+$loginInput1 = isset($_POST['loginInput1'])?$_POST['loginInput1']:'';
+$loginInput2 = isset($_POST['loginInput2'])?$_POST['loginInput2']:'';
+?>
+        <div class="container" style="width:100%">
+            <div class="row entete">
+                <span class="title"><b>Emploi du temps</b>
+                </span>
+                <br><br>
+                <div class="row row_form">
+		                <form class="form-inline" method="post" name="formulaire" onSubmit="return testSaisie()">
+			                <div class="form-group">
+				                <label for="loginInput1">Premier login</label>
+				                <input type="text" class="form-control" id="loginInput1" name="loginInput1" placeholder="Login" value="<?php echo htmlspecialchars($loginInput1); ?>"> &nbsp; &nbsp;
+				                <label for="loginInput2">Deuxième login</label>
+				                <input type="text" class="form-control" id="loginInput2" name="loginInput2" placeholder="Login" value="<?php echo htmlspecialchars($loginInput2); ?>">
+			                </div>
+			                <button type="submit" class="btn btn-default">Valider</button>
+		                </form>	
+                </div>
+            </div>
+		    <?php if(isset($_POST['loginInput1'])) {
+			    include 'tab2.php'; 
+		    } ?>
+        </div>
+	</body>
+</html>
